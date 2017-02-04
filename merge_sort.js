@@ -22,6 +22,7 @@ function merge(left, right) {
       result.push(right.shift())
     }
   }
+
   while (left.length ) {
     result.push(left.shift())
   }
@@ -31,34 +32,34 @@ function merge(left, right) {
   }
   return result
 }
-var array = [34, 203, 3, 746, 200, 984, 198, 764, 9];
-console.log(mergeSort(array));
+// var array = [34, 203, 3, 746, 200, 984, 198, 764, 9];
+// console.log(mergeSort(array));
 
 // Driver code
-// function main() {
-//
-//   sort_from_file('random_wordlist.txt')
-//   sort_from_file('reversed_wordlist.txt')
-//   sort_from_file('sorted_wordlist.txt')
-//
-// }
-//
-// function sort_from_file(filename) {
-//   let fs = require('fs')
-//
-//   fs.readFile(filename, (err, data) => {
-//
-//     if (err)
-//       return console.log(err)
-//
-//     let items = data.toString()
-//       .split("\r\n")
-//
-//     console.log(filename)
-//     console.log("--------")
-//     console.log(mergeSort(items))
-//
-//   })
-// }
+function main() {
 
-// main()
+  sort_from_file('random_wordlist.txt')
+  sort_from_file('reversed_wordlist.txt')
+  sort_from_file('sorted_wordlist.txt')
+
+}
+
+function sort_from_file(filename) {
+  let fs = require('fs')
+
+  fs.readFile(filename, (err, data) => {
+
+    if (err)
+      return console.log(err)
+
+    let items = data.toString()
+      .split("\r\n")
+
+    console.log(filename)
+    console.log("--------")
+    console.log(mergeSort(items))
+
+  })
+}
+
+main()
