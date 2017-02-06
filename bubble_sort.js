@@ -1,7 +1,23 @@
 'use strict'
 
-function bubbleSort(items) {}
-
+function bubbleSort(items) {
+  var length = items.length;
+   for (let i = (length - 1); i >= 0; i--) {
+       //Number of passes
+       for (let j = (length - i); j > 0; j--) {
+           //Compare the adjacent positions
+           if (items[j] < items[j - 1]) {
+               //Swap the numbers
+               let tmp = items[j];
+               items[j] = items[j - 1];
+               items[j - 1] = tmp;
+           }
+       }
+   }
+   return items
+}
+// var array = [34, 203, 3, 746, 200, 984, 198, 764, 9];
+// console.log(bubbleSort(array));
 
 // Driver code
 function main() {
@@ -25,7 +41,7 @@ function sort_from_file(filename) {
 
     console.log(filename)
     console.log("--------")
-    console.log(bubbleSort2(items))
+    console.log(bubbleSort(items))
 
   })
 }
